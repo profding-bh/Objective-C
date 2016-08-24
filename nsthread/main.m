@@ -16,7 +16,9 @@ int main(int argc, char * argv[]) {
         
         NSLog(@"main 主线程 %@",mainThread);
         
+        NSThread *curthread = [NSThread currentThread];
         
+        NSLog(@"main() 当前线程 %@",curthread);
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
