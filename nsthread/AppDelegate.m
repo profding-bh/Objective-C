@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSThread *mainThread = [NSThread mainThread];
+    
+    NSLog(@"AppDelegate 主线程 %@",mainThread);
+    
     return YES;
 }
 

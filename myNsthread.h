@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_AVAILABLE(10_5, 2_0) NS_DESIGNATED_INITIALIZER;
 
-// 2) 创建新的线程，必须调用start方法启动线程。
+// 2) 创建新的线程，必须调用start方法启动线程,否则线程体是不会执行的。
 - (instancetype)initWithTarget:(id)target selector:(SEL)selector object:(nullable id)argument NS_AVAILABLE(10_5, 2_0);
 
 
