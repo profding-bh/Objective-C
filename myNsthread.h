@@ -52,6 +52,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)sleepUntilDate:(NSDate *)date;
 + (void)sleepForTimeInterval:(NSTimeInterval)ti;
 
+
+/**
+ *  终止正在执行的线程，可以是主线程。但整个进程不会退出。
+ */
 + (void)exit;
 
 + (double)threadPriority;
