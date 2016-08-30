@@ -7,12 +7,76 @@
 //
 
 #import "ViewController.h"
+#import <pthread.h>
+#import <errno.h>
+
+pthread_t ntid;
+
+
+
+
+
+
+
+
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+
+
+#pragma mark - C 函数
+/**
+ *  打印id
+ *
+ *  @param s
+ */
+void printids(const char *s)
+{
+    
+    pid_t pid;
+    pthread_t tid;
+    
+    pid = getpid();
+    tid = pthread_self();
+    
+    printf("%s pid %u tid %u (0x%x)\n",s,(unsigned int )pid,(unsigned int )tid,
+           (unsigned int)tid);
+}
+
+
+void *thr_fn(void *arg){
+  //  printids("new thread:"); ios真机，子线程体里面不能再调用自定义函数了。
+    
+
+    
+    return  ((void *)0);// 子线程直接退出
+}
+
+
+
+void *fun(void *par){
+     // printids("new thread:");
+    NSLog(@"=======%@",[NSThread currentThread]);
+  
+    /*
+    pid_t pid;
+    pthread_t tid;
+    
+    pid = getpid();
+    tid = pthread_self();
+    
+    printf("pid %u tid %u (0x%x)\n",(unsigned int )pid,(unsigned int )tid,
+           (unsigned int)tid);
+     */
+    printf("hell\n");
+    return NULL;
+}
+
+
 
 
 #pragma mark - View lifecycle
@@ -35,6 +99,8 @@
 }
 - (IBAction)btnClick:(UIButton *)sender {
     
+#if 0
+    
     NSThread *curthread = [NSThread currentThread];
     
     NSLog(@"当前线程 %@",curthread);
@@ -43,8 +109,29 @@
     
     NSLog(@"主线程 %@",mainThread);
     
-    //[self threadCreate3];
-    [self test]; // 直接阻塞主线程。
+    [self threadCreate3];
+   // [self test]; // 直接阻塞主线程。
+    
+    
+#endif
+    
+    
+#if 0
+    extern    int errno;
+    errno = 0; // 在使用之前，先初始化为0
+    errno = pthread_create(&ntid,NULL,/*thr_fn*/fun,NULL);
+    if(0 != errno){
+        printf("can't create thread:%s \n",strerror(errno));
+    }
+#endif
+    
+#if 0
+    exit(0);  // 进程退出。整个APP直接挂掉。
+    
+#endif
+    
+    [NSThread exit];// 直接退出主线程，但整个进程还存在。
+    
 }
 
 - (void)run:(NSString *)para{
@@ -100,7 +187,11 @@
  */
 - (void)threadCreate3
 {
-    [self performSelectorInBackground:@selector(run:) withObject:@"第3种创建线程的方式"];
+   [self performSelectorInBackground:@selector(run:) withObject:@"第3种创建线程的方式"];
+    
+    
+    // @selector是查找当前类（含子类）的方法。不支持函数
+   // [self performSelectorInBackground:@selector(thr_fn) withObject:@"第3种创建线程的方式"];
 }
 
 
@@ -119,6 +210,10 @@
     }
 
 }
+
+
+
+
 
 
 @end

@@ -112,6 +112,12 @@
 				TargetAttributes = {
 					C458446B1D6B5D0D00603FBF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = EZZLFF3X7R;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -302,6 +308,7 @@
 				C45844851D6B5D0D00603FBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
