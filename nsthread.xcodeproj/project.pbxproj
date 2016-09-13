@@ -13,6 +13,7 @@
 		C458447A1D6B5D0D00603FBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45844781D6B5D0D00603FBF /* Main.storyboard */; };
 		C458447C1D6B5D0D00603FBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C458447B1D6B5D0D00603FBF /* Assets.xcassets */; };
 		C458447F1D6B5D0D00603FBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C458447D1D6B5D0D00603FBF /* LaunchScreen.storyboard */; };
+		C463EAF11D886D4C0082F6AA /* MYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C463EAF01D886D4C0082F6AA /* MYViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		C458447E1D6B5D0D00603FBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C45844801D6B5D0D00603FBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C45844861D6B5EC700603FBF /* myNsthread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myNsthread.h; sourceTree = "<group>"; };
+		C463EAEF1D886D4C0082F6AA /* MYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYViewController.h; path = ../MYViewController.h; sourceTree = "<group>"; };
+		C463EAF01D886D4C0082F6AA /* MYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYViewController.m; path = ../MYViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 				C45844731D6B5D0D00603FBF /* AppDelegate.m */,
 				C45844751D6B5D0D00603FBF /* ViewController.h */,
 				C45844761D6B5D0D00603FBF /* ViewController.m */,
+				C463EAEF1D886D4C0082F6AA /* MYViewController.h */,
+				C463EAF01D886D4C0082F6AA /* MYViewController.m */,
 				C45844781D6B5D0D00603FBF /* Main.storyboard */,
 				C458447B1D6B5D0D00603FBF /* Assets.xcassets */,
 				C458447D1D6B5D0D00603FBF /* LaunchScreen.storyboard */,
@@ -159,6 +164,7 @@
 			files = (
 				C45844771D6B5D0D00603FBF /* ViewController.m in Sources */,
 				C45844741D6B5D0D00603FBF /* AppDelegate.m in Sources */,
+				C463EAF11D886D4C0082F6AA /* MYViewController.m in Sources */,
 				C45844711D6B5D0D00603FBF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
