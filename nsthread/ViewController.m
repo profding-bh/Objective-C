@@ -130,7 +130,19 @@ void *fun(void *par){
     
 #endif
     
+#if 0
     [NSThread exit];// 直接退出主线程，但整个进程还存在。
+    
+#endif
+    
+    
+    NSThread *curthread = [NSThread currentThread];
+    
+    NSLog(@"main() 当前线程 %@",curthread);
+    
+    NSLog(@" %s 当前线程 状态：%d",__func__,[curthread isFinished]);
+    NSLog(@" %s 当前线程 状态：%d",__func__,[curthread isExecuting]);
+    NSLog(@" %s 当前线程 状态：%d",__func__,[curthread isCancelled]);
     
 }
 
