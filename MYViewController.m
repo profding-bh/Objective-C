@@ -80,7 +80,7 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
     
     while (true) {
         
-        [NSThread sleepForTimeInterval:1.f]; // assum do some other stuffs
+        [NSThread sleepForTimeInterval:1.f]; // assume do some other stuffs
         
         pthread_mutex_lock(&mutex);
         
